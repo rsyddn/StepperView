@@ -1,36 +1,111 @@
 package com.example.stepperview
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.Button
-import androidx.navigation.fragment.NavHostFragment
-import com.aceinteract.android.stepper.StepperNavigationView
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.stepperview.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var btnPrev: Button
-    private lateinit var btnNext: Button
-    private lateinit var stepper: StepperNavigationView
+    private lateinit var binding: ActivityMainBinding
+    private var position = 0
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.frame_stepper) as NavHostFragment
-        val navController = navHostFragment.navController
+        binding.stepView.done(false)
 
-        stepper = findViewById(R.id.stepper)
-        stepper.setupWithNavController(navController)
+        binding.button.setOnClickListener {
+            when (position) {
+                0 -> {
+                    binding.personalDetails.visibility = View.GONE
+                    binding.location.visibility = View.VISIBLE
+                    position = 1
+                    binding.stepView.done(false)
+                    binding.stepView.go(position, true)
+                    binding.button.text = "Next"
+                }
+                1 -> {
+                    binding.location.visibility = View.GONE
+                    binding.usage.visibility = View.VISIBLE
+                    position = 2
+                    binding.stepView.done(false)
+                    binding.stepView.go(position, true)
+                    binding.button.text = "Next"
+                }
+                2 -> {
+                    binding.usage.visibility = View.GONE
+                    binding.employment.visibility = View.VISIBLE
+                    position = 3
+                    binding.stepView.done(false)
+                    binding.stepView.go(position, true)
+                    binding.button.text = "Next"
+                }
+                3 -> {
+                    binding.employment.visibility = View.GONE
+                    binding.repayment.visibility = View.VISIBLE
+                    position = 4
+                    binding.stepView.done(false)
+                    binding.stepView.go(position, true)
+                    binding.button.text = "Submit"
+                }
 
-        btnPrev = findViewById(R.id.btn_prev)
-        btnNext = findViewById(R.id.btn_next)
+                else -> {
+                    position = 0
+                    binding.stepView.done(true)
+                    binding.stepView.go(5, true)
 
-        btnPrev.setOnClickListener {
-            stepper.goToPreviousStep()
+                    // Go to another Activity or Fragment
+                }
+            }
         }
+    }
 
-        btnNext.setOnClickListener {
-            stepper.goToNextStep()
+
+    @SuppressLint("SetTextI18n")
+    override fun onBackPressed() {
+        when (position) {
+            0 -> {
+                super.onBackPressed()
+            }
+            1 -> {
+                binding.location.visibility = View.GONE
+                binding.personalDetails.visibility = View.VISIBLE
+                position = 0
+                binding.stepView.done(false)
+                binding.stepView.go(position, true)
+                binding.button.text = "Next"
+            }
+            2 -> {
+                binding.usage.visibility = View.GONE
+                binding.location.visibility = View.VISIBLE
+                position = 1
+                binding.stepView.done(false)
+                binding.stepView.go(position, true)
+                binding.button.text = "Next"
+            }
+            3 -> {
+                binding.employment.visibility = View.GONE
+                binding.usage.visibility = View.VISIBLE
+                position = 2
+                binding.stepView.done(false)
+                binding.stepView.go(position, true)
+                binding.button.text = "Next"
+            }
+            else -> {
+                binding.repayment.visibility = View.GONE
+                binding.employment.visibility = View.VISIBLE
+                position = 3
+                binding.stepView.done(false)
+                binding.stepView.go(position, true)
+                binding.button.text = "Next"
+            }
         }
     }
 
