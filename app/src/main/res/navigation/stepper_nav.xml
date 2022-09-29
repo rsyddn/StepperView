@@ -11,8 +11,8 @@
         android:label="fragment_first_step"
         tools:layout="@layout/fragment_first_step" >
         <action
-            android:id="@+id/action_firstStepFragment_to_secondStepFragment"
-            app:destination="@id/secondStepFragment" />
+            android:id="@+id/action_firstStepFragment_to_cameraActivity"
+            app:destination="@id/cameraActivity" />
     </fragment>
     <fragment
         android:id="@+id/secondStepFragment"
@@ -20,12 +20,22 @@
         android:label="fragment_second_step"
         tools:layout="@layout/fragment_second_step" >
         <action
-            android:id="@+id/action_secondStepFragment_to_thirdStepFragment"
-            app:destination="@id/thirdStepFragment" />
+            android:id="@+id/action_secondStepFragment_to_cameraActivity"
+            app:destination="@id/cameraActivity" />
     </fragment>
     <fragment
         android:id="@+id/thirdStepFragment"
         android:name="com.example.stepperview.ThirdStepFragment"
         android:label="fragment_third_step"
         tools:layout="@layout/fragment_third_step" />
+    <activity
+        android:id="@+id/cameraActivity"
+        android:name="com.example.stepperview.CameraActivity"
+        android:label="activity_camera"
+        tools:layout="@layout/activity_camera" />
+    <activity
+        android:id="@+id/cameraResultActivity"
+        android:name="com.example.stepperview.CameraResultActivity"
+        android:label="activity_camera_result"
+        tools:layout="@layout/activity_camera_result" />
 </navigation>

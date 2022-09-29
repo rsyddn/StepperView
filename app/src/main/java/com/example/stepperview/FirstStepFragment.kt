@@ -21,6 +21,14 @@ class FirstStepFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+//        binding.btnContinue.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_firstStepFragment_to_secondStepFragment))
+        binding.btnContinue.setOnClickListener{
+            view.findNavController().navigate(R.id.action_firstStepFragment_to_cameraActivity)
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
