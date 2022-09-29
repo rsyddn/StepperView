@@ -91,9 +91,81 @@
             android:layout_margin="16dp"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lengkapi Data Diri Anda" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pastikan data diri anda sesuai dengan yang tertera pada kartu keluarga" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Masukan Nama Ibu Kandung" />
+
+            <EditText
+                android:id="@+id/edt_ibu_kandung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nomor Kartu Keluarga (Opsional)" />
+
+            <EditText
+                android:id="@+id/edt_kk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:lines="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kewarganegaraan" />
+
+            <EditText
+                android:id="@+id/edt_kewarganegaraan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:lines="1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email" />
+
+            <EditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1" />
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_baseline_shield_24"
+        android:drawablePadding="8dp"
+        android:text="Dengan ini saya telah membaca dan setuju dengan syarat &amp; ketentuan berlaku"
+        app:layout_constraintBottom_toTopOf="@id/btn_finish" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_finish"

@@ -1,6 +1,7 @@
 package com.example.stepperview
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -71,6 +72,8 @@ class CameraActivity : AppCompatActivity() {
                     val saveUri = Uri.fromFile(photoFile)
                     val msg = "Photo Saved"
                     Toast.makeText(this@CameraActivity, "$msg $saveUri", Toast.LENGTH_SHORT).show()
+
+                    //Todo: Add Intent Here To Result -> Value From URI
                 }
 
                 override fun onError(exception: ImageCaptureException) {
@@ -79,6 +82,7 @@ class CameraActivity : AppCompatActivity() {
 
             })
     }
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
