@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="first_fragment_desc">Persiapkan KTP asli Anda, dan pastikan foto dengan jelas agar pengajuan ada tidak ditolak</string>
     <string name="first_fragment_title">Foto Identitas</string>
+    <string name="btn_continue">Lanjutkan</string>
+    <string name="btn_finish">Selesai</string>
+    <string name="txt_upgrade">Upgrade Account</string>
 </resources>

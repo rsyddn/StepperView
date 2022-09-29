@@ -21,6 +21,19 @@ class FirstStepFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnContinue.setOnClickListener {
+            val mSecondFragment = SecondStepFragment()
+            val mFragmentManager = parentFragmentManager
+            mFragmentManager.beginTransaction().apply {
+                replace(R.id.container, mSecondFragment, SecondStepFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
