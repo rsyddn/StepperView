@@ -45,7 +45,7 @@ class CameraActivity : AppCompatActivity() {
     }
 
     private fun getOutputDirectory(): File {
-        val mediaDir = externalMediaDirs.firstOrNull()?.let { mFile ->
+        val mediaDir = externalCacheDirs.firstOrNull()?.let { mFile ->
             File(mFile, resources.getString(R.string.app_name)).apply {
                 mkdirs()
             }
@@ -70,10 +70,10 @@ class CameraActivity : AppCompatActivity() {
             object : ImageCapture.OnImageSavedCallback {
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
                     val saveUri = Uri.fromFile(photoFile)
-                    val msg = "Photo Saved"
-                    Toast.makeText(this@CameraActivity, "$msg $saveUri", Toast.LENGTH_SHORT).show()
 
-                    //Todo: Add Intent Here To Result -> Value From URI
+                    val resultActivity = Intent(this@CameraActivity, CameraResultActivity::class.java)
+                    resultActivity.putExtra(CameraResultActivity.EXTRA_RESULT, saveUri.toString())
+                    startActivity(resultActivity)
                 }
 
                 override fun onError(exception: ImageCaptureException) {
