@@ -5,32 +5,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import com.example.stepperview.databinding.FragmentFirstStepBinding
-import com.example.stepperview.databinding.FragmentSecondStepBinding
+import android.widget.TextView
+
 
 class SecondStepFragment : Fragment() {
-    private var _binding: FragmentSecondStepBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var tvDataFromFirst : TextView
+
+    companion object {
+        const val EXTRA_DATA = "extra_result_data"
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentSecondStepBinding.inflate(inflater, container, false)
-        return binding.root
+    ): View? {
+        return inflater.inflate(R.layout.fragment_second_step, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnContinue.setOnClickListener {
-            view.findNavController().navigate(R.id.action_firstStepFragment_to_cameraActivity)
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
+        val uri = arguments?.getString(EXTRA_DATA)
+        tvDataFromFirst = view.findViewById(R.id.tv_welcome_fragment)
+        tvDataFromFirst.text = "State 2 = $uri"
     }
 }

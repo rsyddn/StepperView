@@ -7,20 +7,32 @@
     android:layout_margin="16dp"
     tools:context=".CameraResultActivity">
 
-    <ImageView
-        android:id="@+id/iv_result"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:contentDescription="@string/camera_result"
-        app:layout_constraintBottom_toTopOf="@+id/btn_take_pic"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_take_pic"
+    <TextView
+        android:id="@+id/tv_uri"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="DATA URI"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_change_pict"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/change_pict"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_use_pict"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_use_pict"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/use_this_pict"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_change_pict" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
