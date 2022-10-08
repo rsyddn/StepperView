@@ -3,10 +3,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment_first">Hello blank fragment 1</string>
     <string name="hello_blank_fragment_second">Hello blank fragment 2</string>
+    <string name="hello_blank_fragment_third">Hello blank fragment 3</string>
     <string name="first_fragment_desc">Persiapkan KTP asli Anda, dan pastikan foto dengan jelas agar pengajuan ada tidak ditolak</string>
     <string name="first_fragment_title">Foto Identitas</string>
     <string name="camera_result">Camera Result</string>
     <string name="upgrade_account">Upgrade Account</string>
+    <string name="continue_upgrade">Next</string>
     <string name="upgrade_account_drawer_warning">Upgrade Account Drawer Warning</string>
     <string name="capture_pict">Capture Pict</string>
     <string name="use_this_pict">Use This Pict</string>

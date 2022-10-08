@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 
 class CameraResultActivity : AppCompatActivity() {
-    private lateinit var tvUriImage : TextView
+    private lateinit var tvUriImage: TextView
     val uriImage: String? by lazy {
         intent.getStringExtra(EXTRA_DATA)
     }
@@ -15,7 +15,6 @@ class CameraResultActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_RESULT = "extra_result_value"
         const val EXTRA_DATA = "extra_data"
-        const val EXTRA_FROM_FRAGMENT = "extra_result_from_fragment"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

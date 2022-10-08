@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
-    tools:context=".FirstStepFragment">
+    tools:context=".ThirdStepFragment">
+
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -19,6 +20,22 @@
             android:layout_height="match_parent"
             android:layout_margin="16dp"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_welcome_fragment1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hello_blank_fragment_second"
+                android:textColor="@color/purple_700"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_welcome_fragment2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hello_blank_fragment_second"
+                android:textColor="@color/purple_700"
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -41,28 +58,25 @@
                 android:layout_marginTop="16dp"
                 android:background="@color/black" />
 
-            <com.google.android.material.card.MaterialCardView
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:backgroundTint="@color/purple_200"
-                app:strokeColor="@color/purple_400"
-                app:strokeWidth="2dp">
+                android:background="@drawable/tv_border_shape"
+                android:drawableStart="@drawable/ic_info"
+                android:drawablePadding="10dp"
+                android:padding="8dp"
+                android:text="Persiapkan kart identitas asli Anda, untuk melakukan foto selfie"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:text="Persiapkan kart identitas asli Anda, untuk melakukan foto selfie"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_next"
+        android:id="@+id/btn_finish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/continue_upgrade"

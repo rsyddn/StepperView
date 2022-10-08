@@ -34,8 +34,8 @@ class CameraActivity : AppCompatActivity() {
         val btnTakePict: Button = findViewById(R.id.btn_take_pic)
         btnTakePict.setOnClickListener {
             val intent = Intent(this@CameraActivity, CameraResultActivity::class.java)
-            val rand = Random(5)
-            intent.putExtra(CameraResultActivity.EXTRA_DATA, "URI ${rand.nextInt()}")
+            val rand = (0 until 10).random()
+            intent.putExtra(CameraResultActivity.EXTRA_DATA, "URI $rand")
             resultLauncher.launch(intent)
         }
     }
