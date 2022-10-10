@@ -4,15 +4,16 @@ import android.app.Activity.RESULT_OK
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.Fragment
 
-class FirstStepFragment : Fragment() {
+class StepFirstFragment : Fragment() {
     private var callback: FragmentCallback? = null
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -27,9 +28,8 @@ class FirstStepFragment : Fragment() {
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == RESULT_OK) {
-            result.data?.getStringExtra(CameraResultActivity.EXTRA_RESULT)?.let {
-//                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
-                callback?.onFirstFr(it)
+            result.data?.getStringExtra(CameraResultActivity.EXTRA_CAMERA_RESULT_DATA)?.let {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
             }
         }
     }

@@ -13,4 +13,6 @@
     <string name="capture_pict">Capture Pict</string>
     <string name="use_this_pict">Use This Pict</string>
     <string name="change_pict">Change Pict</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

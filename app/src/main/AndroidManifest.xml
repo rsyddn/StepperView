@@ -17,6 +17,20 @@
         android:theme="@style/Theme.StepperView"
         tools:targetApi="31">
         <activity
+            android:name=".FrontCameraResultActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".FrontCameraActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".CameraResultActivity"
             android:exported="false">
             <meta-data
