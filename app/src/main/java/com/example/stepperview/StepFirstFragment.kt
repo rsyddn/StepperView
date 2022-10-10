@@ -8,8 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 
@@ -28,8 +26,8 @@ class StepFirstFragment : Fragment() {
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == RESULT_OK) {
-            result.data?.getStringExtra(CameraResultActivity.EXTRA_CAMERA_RESULT_DATA)?.let {
-                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+            result.data?.getStringExtra(CameraResultActivity.EXTRA_RESULT)?.let {
+                callback?.onFirstToSecondFragment(it)
             }
         }
     }
