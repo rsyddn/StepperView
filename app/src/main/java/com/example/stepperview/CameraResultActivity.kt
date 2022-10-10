@@ -8,7 +8,7 @@ import android.widget.TextView
 
 class CameraResultActivity : AppCompatActivity() {
     private lateinit var tvUriImage: TextView
-    val uriImage: String? by lazy {
+    private val uriImage: String? by lazy {
         intent.getStringExtra(EXTRA_DATA)
     }
 

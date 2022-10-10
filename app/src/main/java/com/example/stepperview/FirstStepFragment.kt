@@ -28,8 +28,8 @@ class FirstStepFragment : Fragment() {
     ) { result ->
         if (result.resultCode == RESULT_OK) {
             result.data?.getStringExtra(CameraResultActivity.EXTRA_RESULT)?.let {
-//                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
-                callback?.onFirstFr(it)
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+//                callback?.onFirstFr(it)
             }
         }
     }
