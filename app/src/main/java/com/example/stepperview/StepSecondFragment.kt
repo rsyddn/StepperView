@@ -30,7 +30,7 @@ class StepSecondFragment : Fragment() {
     private val resultLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
-                result.data?.getStringExtra(CameraResultActivity.EXTRA_RESULT)?.let {
+                result.data?.getStringExtra(FrontCameraResultActivity.EXTRA_RESULT)?.let {
                     val uri = arguments?.getString(EXTRA_DATA)
                     Toast.makeText(
                         requireContext(),
