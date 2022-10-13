@@ -45,6 +45,24 @@ class UpgradeAccActivity : AppCompatActivity(), FragmentCallback {
     }
 
     override fun onSecondToThirdFragment(firstData: String?, uri: String) {
-        TODO("Not yet implemented")
+        val bundle = Bundle()
+        bundle.putString(StepThirdFragment.EXTRA_FIRST_DATA, firstData)
+        bundle.putString(StepThirdFragment.EXTRA_SECOND_DATA, uri)
+
+        val mFragmentManager = supportFragmentManager
+        val mThirdStepFragment = StepThirdFragment()
+        mThirdStepFragment.arguments = bundle
+
+        val fragment = mFragmentManager.findFragmentByTag(StepThirdFragment::class.java.simpleName)
+        if (fragment !is StepThirdFragment) {
+            mFragmentManager
+                .beginTransaction()
+                .replace(
+                    R.id.frame_upgrade_acc,
+                    mThirdStepFragment,
+                    StepThirdFragment::class.java.simpleName
+                )
+                .commit()
+        }
     }
 }

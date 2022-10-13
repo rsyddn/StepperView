@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 
@@ -32,17 +31,7 @@ class StepSecondFragment : Fragment() {
             if (result.resultCode == Activity.RESULT_OK) {
                 result.data?.getStringExtra(FrontCameraResultActivity.EXTRA_RESULT)?.let {
                     val uri = arguments?.getString(EXTRA_DATA)
-                    Toast.makeText(
-                        requireContext(),
-                        "Data From First Fragment : $uri",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    Toast.makeText(
-                        requireContext(),
-                        "Data From Camera Result: $it",
-                        Toast.LENGTH_SHORT
-                    ).show()
-
+                    callback?.onSecondToThirdFragment(uri, it)
                 }
             }
         }

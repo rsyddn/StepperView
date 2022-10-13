@@ -36,7 +36,7 @@ class StepFirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_first_step, container, false)
+        return inflater.inflate(R.layout.fragment_step_first, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
