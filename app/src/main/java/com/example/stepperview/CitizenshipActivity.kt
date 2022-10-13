@@ -52,7 +52,7 @@ class CitizenshipActivity : AppCompatActivity() {
             finish()
         }
 
-
+        svCitizenship.setIconifiedByDefault(false)
         svCitizenship.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
